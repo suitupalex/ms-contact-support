@@ -1,8 +1,6 @@
 require('assert-dotenv')({}, function() {
   'use strict';
 
-  var Promise = require('bluebird');
-
   var HelpEsb = require('help-esb');
   var esbClient = new HelpEsb.Client(process.env.ESB, {
     debug: process.env.DEBUG === 'true'
