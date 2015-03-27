@@ -1,0 +1,16 @@
+service:
+  build: .
+  environment:
+    ESB:
+    HELP_SCOUT_API_KEY:
+    MAILBOX_ID:
+servicedev:
+  build: .
+  command: "npm install && gulp dev"
+  volumes:
+  - .:/code
+  environment:
+    ESB:
+    HELP_SCOUT_API_KEY:
+    MAILBOX_ID:
+  privileged: true
