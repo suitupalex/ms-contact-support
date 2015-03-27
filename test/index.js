@@ -2,6 +2,8 @@ var assert = require('assert');
 var conversationBuilder = require('../src/conversation-builder');
 
 describe('ms-contact-support', function() {
+  'use strict';
+
   describe('conversation builder', function() {
     it('should build correct JSON with no attachment', function() {
       var expected = {

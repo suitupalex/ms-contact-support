@@ -25,5 +25,5 @@ module.exports = function(apiKey) {
       message.attachment = attachment;
       return createConversation(buildConversation(message));
     });
-  }
-}
+  };
+};
