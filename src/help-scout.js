@@ -10,8 +10,8 @@ module.exports = function(apiKey) {
   var Promise = require('bluebird');
   var buildConversation = require('./conversation-builder');
 
-  var helpscout = Helpscout(apiKey);
-  var mailbox = Helpscout(apiKey, process.env.MAILBOX_ID);
+  var helpscout = new Helpscout(apiKey);
+  var mailbox = new Helpscout(apiKey, process.env.MAILBOX_ID);
   var createAttachment = Promise.promisify(
     helpscout.attachments.create.bind(helpscout.attachments));
   var createConversation = Promise.promisify(
