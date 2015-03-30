@@ -29,7 +29,9 @@ module.exports = function(apiKey) {
       Promise.resolve();
 
     return futureAttachment.then(function(attachment) {
-      message.attachment = attachment;
+      if (attachment) {
+        message.attachment = attachment.item.hash;
+      }
       if (isUrgent(message)) {
         return createUrgentConversation(buildConversation(message));
       } else {
@@ -37,8 +39,10 @@ module.exports = function(apiKey) {
       }
     });
   };
-
-  function isUrgent(message) {
-    return message.tags.indexOf('urgent') >= 0;
-  }
 };
+
+function isUrgent(message) {
+  'use strict';
+
+  return message.tags.indexOf('urgent') >= 0;
+}

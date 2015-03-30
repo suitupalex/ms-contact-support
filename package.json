@@ -15,7 +15,7 @@
     "help-esb": "^0.6.4",
     "help-esb-send-to-fem": "git+ssh://git@github.com:helpdotcom/help-esb-send-to-fem.js#v0.2.0",
     "help-fem-command-manager": "^0.2.2",
-    "helpscout": "git+ssh://git@github.com:calebthebrewer/helpscout#0.1.1"
+    "helpscout": "git+ssh://git@github.com:calebthebrewer/helpscout#0.1.2"
       
   },
   "devDependencies": {
