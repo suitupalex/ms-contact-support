@@ -3,7 +3,8 @@ service:
   environment:
     ESB:
     HELP_SCOUT_API_KEY:
-    MAILBOX_ID:
+    HELP_SCOUT_MAILBOX_ID:
+    HELP_SCOUT_URGENT_MAILBOX_ID:
 servicedev:
   build: .
   command: "npm install && gulp dev"
@@ -12,5 +13,6 @@ servicedev:
   environment:
     ESB:
     HELP_SCOUT_API_KEY:
-    MAILBOX_ID:
+    HELP_SCOUT_MAILBOX_ID:
+    HELP_SCOUT_URGENT_MAILBOX_ID:
   privileged: true
