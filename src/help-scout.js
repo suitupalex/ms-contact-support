@@ -16,7 +16,7 @@ module.exports = function(apiKey) {
     apiKey,
     process.env.HELP_SCOUT_URGENT_MAILBOX_ID
   );
-  
+
   var createAttachment = Promise.promisify(
     helpscout.attachments.create.bind(helpscout.attachments));
   var createConversation = Promise.promisify(
@@ -24,7 +24,7 @@ module.exports = function(apiKey) {
   var createUrgentConversation = Promise.promisify(
     urgentMailbox.conversations.create.bind(urgentMailbox.conversations));
   return function(message) {
-    var futureAttachment = (message.attachment) ? 
+    var futureAttachment = (message.attachment) ?
       createAttachment(message.attachment) :
       Promise.resolve();
 
@@ -39,10 +39,8 @@ module.exports = function(apiKey) {
       }
     });
   };
+
+  function isUrgent(message) {
+    return message.tags.indexOf('urgent') >= 0;
+  }
 };
-
-function isUrgent(message) {
-  'use strict';
-
-  return message.tags.indexOf('urgent') >= 0;
-}

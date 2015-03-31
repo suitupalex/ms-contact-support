@@ -3,16 +3,15 @@
 
   var gulp = require('gulp');
   var nodemon = require('gulp-nodemon');
-  var jshint = require('gulp-jshint');
-  var stylish = require('jshint-stylish');
+  var eslint = require('gulp-eslint');
 
   var jsFiles = ['./**/*.js', '!./node_modules/**/*.js'];
 
   gulp.task('lint', function() {
     return gulp.src(jsFiles)
-      .pipe(jshint())
-      .pipe(jshint.reporter(stylish))
-      .pipe(jshint.reporter('fail'));
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.failOnError());
   });
 
   gulp.task('watch', function() {

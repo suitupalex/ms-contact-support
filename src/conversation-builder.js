@@ -1,7 +1,7 @@
 /**
  * Convenience method for extending an object to a full Helpscout conversation.
  *
- * @param {Object} options 
+ * @param {Object} options
  *  @param {String} email
  *  @param {String} name
  *  @param {String} subject
