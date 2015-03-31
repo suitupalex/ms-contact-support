@@ -7,7 +7,8 @@
     "url": "git://github.com/helpdotcom/ms-help-scout.git"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "test": "gulp test"
   },
   "dependencies": {
     "assert-dotenv": "^2.0.0",
@@ -16,11 +17,11 @@
     "help-esb-send-to-fem": "git+ssh://git@github.com:helpdotcom/help-esb-send-to-fem.js#v0.2.0",
     "help-fem-command-manager": "^0.2.2",
     "helpscout": "git+ssh://git@github.com:calebthebrewer/helpscout#0.1.2"
-      
   },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-eslint": "^0.7.0",
+    "gulp-mocha": "^2.0.1",
     "gulp-nodemon": "^1.0.5",
     "mocha": "^2.2.1"
   }
