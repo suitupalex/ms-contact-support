@@ -13,10 +13,11 @@
   "dependencies": {
     "assert-dotenv": "^2.0.0",
     "bluebird": "^2.9.24",
-    "help-esb": "^0.6.5",
+    "help-esb": "^0.6.6",
     "help-esb-send-to-fem": "git+ssh://git@github.com:helpdotcom/help-esb-send-to-fem.js#v0.2.0",
     "help-fem-command-manager": "^0.2.2",
-    "helpscout": "git+ssh://git@github.com:calebthebrewer/helpscout#0.1.2"
+    "helpscout": "git+ssh://git@github.com:calebthebrewer/helpscout#0.1.2",
+    "newrelic": "^1.18.1"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
