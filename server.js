@@ -55,4 +55,7 @@ require('assert-dotenv')({}, function() {
   });
 
   esbClient.on('error', console.error);
+
+  process.on('SIGINT', process.exit.bind(process));
+  process.on('SIGTERM', process.exit.bind(process));
 });
