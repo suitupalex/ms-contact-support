@@ -4,4 +4,4 @@ ADD . /code
 
 ENTRYPOINT []
 
-CMD ["node", "server.js"]
+CMD ["node", "server.js", "--", "ms-contact-support"]
