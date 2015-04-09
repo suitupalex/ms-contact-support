@@ -1,9 +1,12 @@
 require('assert-dotenv')({}, function() {
   'use strict';
 
+  var newrelic = process.env.NEW_RELIC_ENABLED ? require('newrelic') : null;
+
   var HelpEsb = require('help-esb');
   var esbClient = new HelpEsb.Client(process.env.ESB, {
-    debug: process.env.DEBUG === 'true'
+    debug: process.env.DEBUG === 'true',
+    newrelic: newrelic
   });
   esbClient.login('contact-support');
 
@@ -55,4 +58,7 @@ require('assert-dotenv')({}, function() {
   });
 
   esbClient.on('error', console.error);
+
+  process.on('SIGINT', process.exit.bind(process));
+  process.on('SIGTERM', process.exit.bind(process));
 });
