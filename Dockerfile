@@ -1,7 +1,8 @@
-FROM nubs/npm-build
+FROM node:0.10
 
 ADD . /code
+WORKDIR /code
 
-ENTRYPOINT []
+ENV PATH node_modules/.bin:$PATH
 
-CMD ["node", "server.js", "--", "ms-contact-support"]
+CMD ["node", "--max_old_space_size=32", "server.js", "--", "ms-contact-support"]
